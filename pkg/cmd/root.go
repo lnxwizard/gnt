@@ -10,8 +10,8 @@ var rootCmd = &cobra.Command{
 	Use:     "gnt",
 	Short:   "Create Go projects quickly in terminal.",
 	Long:    "Create Go projects quickly in terminal. (Long Message)",
-	Example: "gnt [command] [subcommand] [flag]",
-	Version: "1.0.0",
+	Example: "gnt --version",
+	Version: "0.1.0",
 }
 
 // execute root command

@@ -13,7 +13,7 @@ var createCmd = &cobra.Command{
 	Use:     "create",
 	Short:   "Create Go project.",
 	Long:    "Create Go project with default template. This is include cmd/{projectName}/main.go directory, go.mod file and .out folder.",
-	Example: "gnt create [projectName]",
+	Example: "gnt create myGoProject",
 	Run: func(cmd *cobra.Command, args []string) {
 		// define project name
 		projectName := args[0]
