@@ -1,19 +1,22 @@
 package cmd
 
 import (
-	"github.com/fatih/color"
 	"github.com/lnxwizard/gnt/pkg/utils"
 	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
 )
 
+// suggest `create` command for this arrays items
+var suggestStrings = []string{"craete", "crea", "createe", "creata", "creat"}
+
 // define `create` command
 var createCmd = &cobra.Command{
-	Use:     "create",
-	Short:   "Create Go project.",
-	Long:    "Create Go project with default template. This is include cmd/{projectName}/main.go directory, go.mod file and .out folder.",
-	Example: "gnt create myGoProject",
+	Use:        "create",
+	Short:      "Create Go project.",
+	Long:       "Create Go project with default template. This is include cmd/{projectName}/main.go directory, go.mod file and .out folder.",
+	Example:    "gnt create myGoProject",
+	SuggestFor: suggestStrings,
 	Run: func(cmd *cobra.Command, args []string) {
 		// define project name
 		projectName := args[0]
@@ -21,10 +24,7 @@ var createCmd = &cobra.Command{
 		// create base folder
 		err := os.Mkdir(projectName, 0755)
 		// error handling
-		if err != nil {
-			color.Red("Error: Cannot create base directory:", projectName)
-			os.Exit(1)
-		}
+		utils.HandleError(err)
 
 		// define `cmd` directory name
 		cmdDirName := projectName + "/cmd/" + projectName
@@ -32,10 +32,7 @@ var createCmd = &cobra.Command{
 		// creating directory `cmd/{projectName}`
 		err = os.MkdirAll(cmdDirName, 0755)
 		// error handling
-		if err != nil {
-			color.Red("Error: Cannot create directory:", cmdDirName)
-			os.Exit(1)
-		}
+		utils.HandleError(err)
 
 		// define `main` file directory `cmd/{projectName}/main.go`
 		mainFileDir := cmdDirName + "/main.go"
@@ -50,29 +47,23 @@ func main() {
 }
 `), 0660)
 		// error handling
-		if err != nil {
-			color.Red("Error: Cannot create directory:", mainFileDir)
-			os.Exit(1)
-		}
+		utils.HandleError(err)
 
 		// create directory `.out`
 		err = os.Mkdir(projectName+"/.out", 0755)
 		// error handling
-		if err != nil {
-			color.Red("Error: Cannot create directory: .out")
-			os.Exit(1)
-		}
+		utils.HandleError(err)
 
 		// change current working directory for creating go module file
 		err = os.Chdir(utils.GetCurrentWorkingDirectory() + "/" + projectName)
 
 		// create go module file `go.mod`
-		gomodCmd := exec.Command("go", "mod", "init")
+		exec.Command("go", "mod", "init")
 		// error handling
-		if err = gomodCmd.Run(); err != nil {
-			color.Red("Error: Cannot run command:", gomodCmd)
-			os.Exit(1)
-		}
+		utils.HandleError(err)
+
+		// Print the directory tree
+		utils.PrintProjectStructure()
 	},
 }
 

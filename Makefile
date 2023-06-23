@@ -1,9 +1,9 @@
-# Makefile for Go
+# Makefile for Go(lang)
 # Runing project
 run:
 	@go run cmd/gnt/main.go
 
-# Building project
+# Building project locally
 build:
 	@go build -o .out/gnt cmd/gnt/main.go
 

@@ -1,0 +1,57 @@
+project_name: gnt
+
+release:
+  prerelease: auto
+  draft: true
+  name_template: "gnt {{.Version}}"
+
+builds:
+  - id: linux
+    goos:
+      - linux
+    goarch:
+      - amd64
+      - 386
+      - arm
+      - arm64
+    binary: bin/gnt
+    env:
+      - CGO_ENABLED=0
+    flags: -mod=vendor
+
+  - id: macos
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    binary: bin/gnt
+    env:
+      - CGO_ENABLED=0
+    flags: -mod=vendor
+
+archives:
+  - id: linux-archive
+    builds:
+      - linux
+    name_template: "gnt_{{ .Version }}_linux_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    wrap_in_directory: true
+    format: tar.gz
+    rlcp: true
+    files:
+      - LICENSE
+      - VERSION
+  - id: macos-archive
+    builds:
+      - macos
+    name_template: "gnt_{{ .Version }}_linux_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}"
+    wrap_in_directory: true
+    format: zip
+    rlcp: true
+    files:
+      - LICENSE
+      - VERSION
+
+checksum:
+  name_template: "gnt_{{ .Version }}_checksums.txt"
+  algorithm: sh1

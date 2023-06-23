@@ -1,8 +1,8 @@
 package cmd
 
 import (
+	"github.com/lnxwizard/gnt/pkg/utils"
 	"github.com/spf13/cobra"
-	"os"
 )
 
 // define root command
@@ -16,8 +16,7 @@ var rootCmd = &cobra.Command{
 
 // Execute root command
 func Execute() {
+	err := rootCmd.Execute()
 	// error handling
-	if err := rootCmd.Execute(); err != nil {
-		os.Exit(1)
-	}
+	utils.HandleError(err)
 }
