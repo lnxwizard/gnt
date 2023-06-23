@@ -9,7 +9,7 @@ gnt create myGoProject
 ```
 
 # Installation
-`gnt` is supports cross-platform. So, you can use `gnt` in Linux, MacOS and Windows operating systems.
+`gnt` will soon support cross platform. So, you can use `gnt` in Linux, MacOS and Windows operating systems.
 
 ## Linux
 Open `Releases` page in the GitHub and download the latest `.tar.gz` file. Finally add `gnt/bin` directory to the system path and type:
@@ -19,10 +19,10 @@ gnt --help
 If you see a help message, you can use `gnt` in your system.
 
 ## MacOS
-MacOS operating systems are not supported for now.
+MacOS operating systems are not supported for now. Coming Soon...
 
 ## Windows
-Windows operating systems are not supported for now.
+Windows operating systems are not supported for now. Coming Soon...
 
 # Documentation
 Documentation for `gnt` is coming soon...
