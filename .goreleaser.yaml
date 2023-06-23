@@ -18,6 +18,7 @@ builds:
     env:
       - CGO_ENABLED=0
     flags: -mod=vendor
+    main: ./cmd/gnt
 
   - id: macos
     goos:
@@ -29,6 +30,7 @@ builds:
     env:
       - CGO_ENABLED=0
     flags: -mod=vendor
+    main: ./cmd/gnt
 
 archives:
   - id: linux-archive
