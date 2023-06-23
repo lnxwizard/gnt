@@ -11,7 +11,7 @@ var rootCmd = &cobra.Command{
 	Short:   "Create Go projects quickly in terminal.",
 	Long:    "Create Go projects quickly in terminal. (Long Message)",
 	Example: "gnt --version",
-	Version: "0.1.0",
+	Version: "0.2.0",
 }
 
 // Execute root command
