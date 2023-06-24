@@ -3,7 +3,7 @@ project_name: gnt
 release:
   prerelease: auto
   draft: true # I'm taking a look at the release draft, editing and publishing
-  name_template: "hw v{{ .Version }}"
+  name_template: "gnt v{{ .Version }}"
 
 builds:
   - id: linux
