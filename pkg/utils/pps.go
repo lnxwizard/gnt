@@ -6,7 +6,13 @@ import (
 	"os"
 )
 
-func PrintProjectStructure() {
+func PrintProjectStructure(projectName string) {
+	// print succes message
+	fmt.Println("Project created succesfully:", projectName, "\n ")
+
+	// print project structure title message
+	fmt.Println("Your Project Structure")
+
 	// define tree view and directory
 	tree, err := textree.TreeFromDir(".")
 	// error handling
