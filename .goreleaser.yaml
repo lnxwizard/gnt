@@ -1,0 +1,50 @@
+project_name: gnt
+
+release:
+  prerelease: auto
+  draft: true # I'm taking a look at the release draft, editing and publishing
+  name_template: "hw v{{ .Version }}"
+
+builds:
+  - id: linux
+    goos:
+      - linux
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
+    binary: bin/gnt
+    main: ./cmd/gnt/main.go
+    env:
+      - CGO_ENABLED=0
+  - id: macos
+    goos:
+      - darwin
+    goarch:
+      - arm64
+      - amd64
+    binary: bin/gnt
+    main: ./cmd/gnt/main.go
+    env:
+      - CGO_ENABLED=0
+
+archives:
+  - id: linux_archive
+    builds:
+      - linux
+    format: tar.gz
+    files:
+      - LICENSE
+      - README.md
+      - VERSION
+      - CHANGELOG.md
+  - id: macos_archive
+    builds:
+      - macos
+    format: zip
+    files:
+      - LICENSE
+      - README.md
+      - VERSION
+      - CHANGELOG.md
