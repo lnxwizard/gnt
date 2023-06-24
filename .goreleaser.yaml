@@ -38,7 +38,6 @@ archives:
       - LICENSE
       - README.md
       - VERSION
-      - CHANGELOG.md
   - id: macos_archive
     builds:
       - macos
@@ -47,4 +46,3 @@ archives:
       - LICENSE
       - README.md
       - VERSION
-      - CHANGELOG.md
