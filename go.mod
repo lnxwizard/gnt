@@ -3,6 +3,7 @@ module github.com/lnxwizard/gnt
 go 1.20
 
 require (
+	github.com/cli/browser v1.2.0 // indirect
 	github.com/fatih/color v1.15.0 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect

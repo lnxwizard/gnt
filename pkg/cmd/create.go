@@ -17,7 +17,7 @@ import (
 */
 
 // suggest `create` command for this arrays items
-var suggestStrings = []string{"craete", "crea", "createe", "creata", "creat"}
+var suggestForCreate = []string{"craete", "crea", "createe", "creata", "creat"}
 
 // define `create` command
 var createCmd = &cobra.Command{
@@ -25,7 +25,7 @@ var createCmd = &cobra.Command{
 	Short:      "Create Go project.",
 	Long:       "Create Go project with default template. This is include cmd/{projectName}/main.go directory, go.mod file and bin folder.",
 	Example:    "gnt create myGoProject",
-	SuggestFor: suggestStrings,
+	SuggestFor: suggestForCreate,
 	Run:        createRun,
 }
 
