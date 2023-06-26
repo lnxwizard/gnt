@@ -5,7 +5,7 @@ run:
 
 # Building project locally
 build:
-	@go build -o .out/gnt cmd/gnt/main.go
+	@go build -o bin/gnt cmd/gnt/main.go
 
 # Cleanign project
 clean:
