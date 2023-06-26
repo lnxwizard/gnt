@@ -7,14 +7,11 @@ import (
 )
 
 func PrintProjectStructure(projectName string) {
-	// print succes message
-	fmt.Println("Project created succesfully:", projectName, "\n ")
-
 	// print project structure title message
 	fmt.Println("Your Project Structure")
 
 	// define tree view and directory
-	tree, err := textree.TreeFromDir(".")
+	tree, err := textree.TreeFromDir(projectName)
 	// error handling
 	HandleError(err)
 
@@ -22,5 +19,5 @@ func PrintProjectStructure(projectName string) {
 	tree.Render(os.Stdout, textree.NewRenderOptions())
 
 	// print number of directories and files
-	fmt.Println(CountDirectories("."), "Directories,", CountFiles("."), "Files\n ")
+	fmt.Println(CountDirectories(projectName), "Directories,", CountFiles(projectName), "Files\n ")
 }
