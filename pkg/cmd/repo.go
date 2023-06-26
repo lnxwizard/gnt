@@ -6,6 +6,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// suggestion strings for repo command
 var suggestForRepo = []string{"rep", "repository", "source", "reposit", "reposito", "repositor"}
 
 var repoCmd = &cobra.Command{
@@ -23,4 +24,9 @@ func openRepository(cmd *cobra.Command, args []string) {
 
 	// error handling
 	utils.HandleError(err)
+}
+
+func init() {
+	// add `repo` command under root command
+	rootCmd.AddCommand(repoCmd)
 }

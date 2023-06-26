@@ -16,7 +16,7 @@ import (
 	5. Check the command line flags, if used, create new folder by flag. Example: --pkg and --internal flags
 */
 
-// suggest `create` command for this arrays items
+// suggestion strings for create command
 var suggestForCreate = []string{"craete", "crea", "createe", "creata", "creat"}
 
 // define `create` command

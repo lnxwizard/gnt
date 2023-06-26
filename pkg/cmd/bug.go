@@ -6,6 +6,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
+// suggestion strings for bug command
 var suggestForBug = []string{"buug", "bgu", "bg", "bu", "bugg", "issue"}
 
 var bugCmd = &cobra.Command{
