@@ -1,0 +1,1 @@
+This folder is used for documentation related to developing `gnt`. Documentation on how to download `gnt` will be added soon.
