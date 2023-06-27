@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"github.com/lnxwizard/gnt/internal/gnt/mkdir"
+	"github.com/lnxwizard/gnt/internal/gnt/tchfile"
 	"github.com/lnxwizard/gnt/internal/gnt/wrtfile"
 	"github.com/lnxwizard/gnt/pkg/utils"
 	"github.com/spf13/cobra"
@@ -36,6 +37,9 @@ func createRun(cmd *cobra.Command, args []string) {
 	// create project folder
 	mkdir.CreateProjectFolder(projectName)
 
+	// crate bin folder
+	mkdir.CreateBinaryFolder(projectName)
+
 	// define `pkg` flag value
 	flagPkgVal, err := cmd.Flags().GetBool("pkg")
 	utils.HandleError(err)
@@ -68,8 +72,8 @@ func createRun(cmd *cobra.Command, args []string) {
 	// write `Hello, World!` program into main.go file
 	wrtfile.WriteMainFile(projectName + "/cmd/" + projectName + "/main.go")
 
-	// crate bin folder
-	mkdir.CreateBinaryFolder(projectName)
+	// create go module
+	tchfile.CreateGoModule(projectName)
 
 	// Print the project directory tree
 	utils.PrintProjectStructure(projectName)
