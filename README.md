@@ -36,8 +36,8 @@ Windows operating systems are not supported for now. Coming Soon...
   - `--pkg`: Add pkg folder to your project.
   - `--internal`: Add internal folder to your project.
   - `--makefile`: Create Makefile.
-  - `help`: Help for gnt
-  - `repo`: Open GitHub repository
+- `help`: Help for gnt
+- `repo`: Open GitHub repository
 
 ## Flags
 - `-h`, `--help`: Prints help message
