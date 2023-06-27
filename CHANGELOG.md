@@ -1,6 +1,6 @@
 # gnt v0.5.0-beta
 ## Changelog
-* Update README.md
+* 16c2ccc Update README.md
 * f07001d Updated to v0.5.0-beta
 * 9871e4a #2 Bug Fixed
 * b9c60ae Added the 'makefile' flag under the create command
