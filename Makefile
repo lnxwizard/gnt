@@ -1,5 +1,5 @@
 # Makefile for Go(lang)
-# Runing project
+# Running project
 run:
 	@go run cmd/gnt/main.go
 
@@ -7,6 +7,6 @@ run:
 build:
 	@go build -o bin/gnt cmd/gnt/main.go
 
-# Cleanign project
+# Cleaning project
 clean:
 	@go clean

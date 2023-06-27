@@ -44,6 +44,10 @@ func createRun(cmd *cobra.Command, args []string) {
 	flagInternalVal, err := cmd.Flags().GetBool("internal")
 	utils.HandleError(err)
 
+	// define `makefile` flag value
+	flagMakefileVal, err := cmd.Flags().GetBool("makefile")
+	utils.HandleError(err)
+
 	// if pkg flag is used create pkg folder else if internal flag is used create internal folder
 	if flagPkgVal && !flagInternalVal {
 		mkdir.CreatePkgFolder(projectName)
@@ -52,6 +56,10 @@ func createRun(cmd *cobra.Command, args []string) {
 	} else if flagPkgVal && flagInternalVal {
 		mkdir.CreatePkgFolder(projectName)
 		mkdir.CreateInternalFolder(projectName)
+	}
+
+	if flagMakefileVal {
+		wrtfile.WriteMakefile(projectName+"/Makefile", projectName)
 	}
 
 	// create cmd/{projectName} directory
@@ -75,4 +83,5 @@ func init() {
 	// add `pkg` flag under `create` command
 	createCmd.Flags().Bool("pkg", false, "Add `pkg` folder to your project.")
 	createCmd.Flags().Bool("internal", false, "Add `internal` folder to your project.")
+	createCmd.Flags().Bool("makefile", false, "Create Makefile.")
 }
