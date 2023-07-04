@@ -1,5 +1,5 @@
 # Makefile for Go(lang)
-# Running project
+# Running project locally
 run:
 	@go run cmd/gnt/main.go
 
