@@ -3,6 +3,7 @@ package cmd
 import (
 	"github.com/lnxwizard/gnt/pkg/utils"
 	"github.com/spf13/cobra"
+	"go.szostok.io/version/extension"
 )
 
 // define root command
@@ -12,6 +13,14 @@ var rootCmd = &cobra.Command{
 	Long:    "Create Go projects quickly in terminal. (Long Message)",
 	Example: "gnt --version",
 	Version: "0.2.0",
+}
+
+func init() {
+	rootCmd.AddCommand(
+		extension.NewVersionCobraCmd(
+			extension.WithUpgradeNotice("lnxwizard", "gnt"),
+		),
+	)
 }
 
 // Execute root command
