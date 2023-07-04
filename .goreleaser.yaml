@@ -6,7 +6,7 @@ release:
   name_template: "gnt v{{ .Version }}"
 
 builds:
-  - id: linux
+  - id: linux # Build for Linux
     goos:
       - linux
     goarch:
@@ -18,7 +18,11 @@ builds:
     main: ./cmd/gnt/main.go
     env:
       - CGO_ENABLED=0
-  - id: macos
+    ldflags:
+      - -s -w
+      - -X go.szostok.io/version.version={{.Version}}
+      - -X go.szostok.io/version.buildDate={{.Date}}
+  - id: macos # Build for macOS
     goos:
       - darwin
     goarch:
@@ -28,6 +32,10 @@ builds:
     main: ./cmd/gnt/main.go
     env:
       - CGO_ENABLED=0
+    ldflags:
+      - -s -w
+      - -X go.szostok.io/version.version={{.Version}}
+      - -X go.szostok.io/version.buildDate={{.Date}}
 
 archives:
   - id: linux_archive
@@ -38,6 +46,7 @@ archives:
       - LICENSE
       - README.md
       - VERSION
+      - docs/CHANGELOG.md
   - id: macos_archive
     builds:
       - macos
@@ -46,3 +55,4 @@ archives:
       - LICENSE
       - README.md
       - VERSION
+      - docs/CHANGELOG.md
