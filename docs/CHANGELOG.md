@@ -1,3 +1,13 @@
+# v0.7.0-beta
+## Changelog
+* 47f1fc7 Update version
+* 3a18698 Added three new sub-commands for `bug` command.
+* 78fe70c Added issue templates on GitHub
+* fa10222 Update CHANGELOG.md
+* f1ed5c3 Added Contributing documents
+* 53a9972 Update project layout
+* ed2a568 Update .gitignore
+
 # v0.6.0-beta
 ## Changelog
 * 0e462ff Update VERSION
