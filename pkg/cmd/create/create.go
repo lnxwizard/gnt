@@ -1,4 +1,4 @@
-package cmd
+package create
 
 import (
 	"github.com/lnxwizard/gnt/internal/gnt/mkdir"
@@ -12,25 +12,36 @@ import (
 	Steps to create a Go app:
 	1. Create the project folder.
 	2. Create the `bin` folder.
-	3. Create the directory `cmd/projectName`.
-	4. Create the main.go file in the `cmd/projectName` directory.
-	5. Check the command line flags, if used, create new folder by flag. Example: --pkg and --internal flags
+	3. Check the command line flags, if used, create new folder by flag. Example: --pkg and --internal flags
+	3. Create the directory `cmd/{projectName}`.
+	4. Create the main.go file in the `cmd/projectName` directory and write classic `Hello, World!` program in it.
+	6. Create go module (go.mod).
 */
 
 // suggestion strings for create command
 var suggestForCreate = []string{"craete", "crea", "createe", "creata", "creat"}
 
-// define `create` command
-var createCmd = &cobra.Command{
-	Use:        "create",
-	Short:      "Create Go project.",
-	Long:       "Create Go project with default template. This is include cmd/{projectName}/main.go directory, go.mod file and bin folder.",
-	Example:    "gnt create myGoProject",
-	SuggestFor: suggestForCreate,
-	Run:        createRun,
+func NewCmdCreate() *cobra.Command {
+	// define create command
+	cmd := &cobra.Command{
+		Use:        "create",
+		Short:      "Create Go project.",
+		Long:       "Create Go project with default template. This is include cmd/{projectName}/main.go directory, go.mod file and bin folder.",
+		Example:    "gnt create myGoProject",
+		SuggestFor: suggestForCreate,
+		Run:        RunCmdCreate,
+	}
+
+	// define flags for create command
+	cmd.Flags().Bool("pkg", false, "Add `pkg` folder to your project.")
+	cmd.Flags().Bool("internal", false, "Add `internal` folder to your project.")
+	cmd.Flags().Bool("makefile", false, "Create Makefile.")
+
+	// return cobra command
+	return cmd
 }
 
-func createRun(cmd *cobra.Command, args []string) {
+func RunCmdCreate(cmd *cobra.Command, args []string) {
 	// define project name
 	projectName := args[0]
 
@@ -77,15 +88,4 @@ func createRun(cmd *cobra.Command, args []string) {
 
 	// Print the project directory tree
 	utils.PrintProjectStructure(projectName)
-}
-
-// init function for create command
-func init() {
-	// add `create` command under root command
-	rootCmd.AddCommand(createCmd)
-
-	// add `pkg` flag under `create` command
-	createCmd.Flags().Bool("pkg", false, "Add `pkg` folder to your project.")
-	createCmd.Flags().Bool("internal", false, "Add `internal` folder to your project.")
-	createCmd.Flags().Bool("makefile", false, "Create Makefile.")
 }

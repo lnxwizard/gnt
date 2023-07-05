@@ -1,4 +1,4 @@
-package cmd
+package bug
 
 import (
 	"github.com/cli/browser"
@@ -9,24 +9,25 @@ import (
 // suggestion strings for bug command
 var suggestForBug = []string{"buug", "bgu", "bg", "bu", "bugg", "issue"}
 
-var bugCmd = &cobra.Command{
-	Use:        "bug",
-	Short:      "Report bug.",
-	Long:       "Report a bug/issue from GitHub.",
-	Example:    "gnt bug",
-	SuggestFor: suggestForBug,
-	Run:        reportBugOnGitHub,
+func NewCmdBug() *cobra.Command {
+	// define `bug` command
+	cmd := &cobra.Command{
+		Use:        "bug",
+		Short:      "Report bug.",
+		Long:       "Report a bug/issue from GitHub.",
+		Example:    "gnt bug",
+		SuggestFor: suggestForBug,
+		Run:        RunCmdBug,
+	}
+
+	// return cobra command
+	return cmd
 }
 
-func reportBugOnGitHub(cmd *cobra.Command, args []string) {
+func RunCmdBug(cmd *cobra.Command, args []string) {
 	// open bug report url in your default browser
 	err := browser.OpenURL("https://github.com/lnxwizard/gnt/issues/new")
 
 	// error handling
 	utils.HandleError(err)
-}
-
-func init() {
-	// add `bug` command under root command
-	rootCmd.AddCommand(bugCmd)
 }

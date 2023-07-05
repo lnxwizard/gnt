@@ -1,10 +1,12 @@
 package main
 
 import (
-	"github.com/lnxwizard/gnt/pkg/cmd"
+	rootCmd "github.com/lnxwizard/gnt/pkg/cmd/root"
+	"os"
 )
 
 func main() {
-	// execute root command
-	cmd.Execute()
+	if err := rootCmd.NewCmdRoot().Execute(); err != nil {
+		os.Exit(1)
+	}
 }
