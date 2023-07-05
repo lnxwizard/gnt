@@ -20,7 +20,7 @@ func NewCmdRoot() *cobra.Command {
 		$ gnt bug
 		$ gnt repo
 		$ gnt create myGoApp --pkg --makefile`),
-		Version: "0.6.0-beta",
+		Version: "0.7.0-beta",
 	}
 
 	// define commands
