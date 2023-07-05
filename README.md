@@ -1,12 +1,15 @@
 # gnt
-[gnt](https://github.com/lnxwizard/gnt) is command-line tool for creating [Go](https://github.com/golang/go) projects quickly.
+`gnt` is command-line tool for creating [Go](https://github.com/golang/go) projects quickly.
 
-![gnt-create-0 5 0-beta](https://github.com/lnxwizard/gnt/assets/91411319/d959f76a-c9d6-458e-ba66-c12657366816)
+![gnt](https://github.com/lnxwizard/gnt/assets/91411319/db6cd22d-4acf-40bd-a3d4-d3b4889cc01d)
 
 You can create Go project templates with `gnt` in your favorite terminal. For creating basic Go project just type:
 ```shell
 gnt create myGoProject
 ```
+
+# Contributing
+You can contribute to `gnt` project for help me to develop. See [CONTRIBUTING.md](CONTRIBUTING.md) for more information. Thanks for all contributors.
 
 # Installation
 `gnt` will soon support cross-platform. So, you can use `gnt` in Linux, macOS and Windows operating systems.
@@ -32,9 +35,6 @@ Windows operating systems are not supported for now. Coming Soon...
 ## Commands
 - `bug`: Report bug
 - `create`: Create Go projects
-  - `--pkg`: Add pkg folder to your project.
-  - `--internal`: Add internal folder to your project.
-  - `--makefile`: Create Makefile.
 - `help`: Help for gnt
 - `repo`: Open GitHub repository
 - `version`: Print the CLI version
