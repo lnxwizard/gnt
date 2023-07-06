@@ -5,8 +5,8 @@ import (
 	bugCmd "github.com/lnxwizard/gnt/pkg/cmd/bug"
 	createCmd "github.com/lnxwizard/gnt/pkg/cmd/create"
 	repoCmd "github.com/lnxwizard/gnt/pkg/cmd/repo"
+	versionCmd "github.com/lnxwizard/gnt/pkg/cmd/version"
 	"github.com/spf13/cobra"
-	"go.szostok.io/version/extension"
 )
 
 func NewCmdRoot() *cobra.Command {
@@ -27,11 +27,7 @@ func NewCmdRoot() *cobra.Command {
 	cmd.AddCommand(bugCmd.NewCmdBug())
 	cmd.AddCommand(createCmd.NewCmdCreate())
 	cmd.AddCommand(repoCmd.NewCmdRepo())
-	cmd.AddCommand(
-		extension.NewVersionCobraCmd(
-			extension.WithUpgradeNotice("lnxwizard", "gnt"),
-		),
-	)
+	cmd.AddCommand(versionCmd.NewCmdVersion())
 
 	// return cobra command
 	return cmd
