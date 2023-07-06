@@ -48,3 +48,6 @@ Documentation for `gnt` is coming soon...
 
 # License
 [MIT License](LICENSE)
+
+# Star History
+[![Star History](https://api.star-history.com/svg?repos=lnxwizard/gnt&type=Date)](https://star-history.com/#lnxwizard/gnt&Date)
