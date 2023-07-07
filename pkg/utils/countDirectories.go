@@ -1,7 +1,6 @@
-package count
+package utils
 
 import (
-	"github.com/lnxwizard/gnt/pkg/utils"
 	"os"
 )
 
@@ -12,7 +11,7 @@ func CountDirectories(directory string) int {
 	// read directory
 	directoryEntries, err := os.ReadDir(directory)
 	// error handling
-	utils.HandleError(err)
+	HandleError(err)
 
 	// count directories
 	for _, directoryEntry := range directoryEntries {
