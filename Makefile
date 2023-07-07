@@ -7,6 +7,6 @@ run:
 build:
 	@go build -o bin/gnt cmd/gnt/main.go
 
-# Cleaning project
-clean:
-	@go clean
+# Add missing and remove unused modules
+tidy:
+	@go mod tidy

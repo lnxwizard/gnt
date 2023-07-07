@@ -15,7 +15,7 @@ You can contribute to `gnt` project for help me to develop. See [CONTRIBUTING.md
 `gnt` will soon support cross-platform. So, you can use `gnt` in Linux, macOS and Windows operating systems.
 
 ## Linux
-Open the `Releases` page and click to the latest release and download `gnt_{version}_linux_386.tar.gz`, `gnt_{version}_linux_amd64.tar.gz`, `gnt_{version}_linux_arm.tar.gz` `or gnt_{version}_linux_arm64.tar.gz`depending on your processor architecture. Add `gnt/bin` to the system path, open your favorite Terminal and type:
+Open the `Releases` page and click to the latest release and download `gnt_{version}_linux_386.tar.gz`, `gnt_{version}_linux_amd64.tar.gz`, `gnt_{version}_linux_arm.tar.gz` or `gnt_{version}_linux_arm64.tar.gz`depending on your processor architecture. Add `gnt/bin` to the system path, open your favorite Terminal and type:
 ```shell
 gnt --help
 ```
