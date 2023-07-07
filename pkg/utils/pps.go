@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"github.com/lnxwizard/gnt/pkg/count"
 	"github.com/plouc/textree"
 	"os"
 )
@@ -19,5 +20,5 @@ func PrintProjectStructure(projectName string) {
 	tree.Render(os.Stdout, textree.NewRenderOptions())
 
 	// print number of directories and files
-	fmt.Println(CountDirectories(projectName), "Directories,", CountFiles(projectName), "Files\n ")
+	fmt.Println(count.CountDirectories(projectName), "Directories,", count.CountFiles(projectName), "Files\n ")
 }
