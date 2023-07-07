@@ -15,13 +15,51 @@ You can contribute to `gnt` project for help me to develop. See [CONTRIBUTING.md
 `gnt` will soon support cross-platform. So, you can use `gnt` in Linux, macOS and Windows operating systems.
 
 ## Linux
+`gnt` for Linux is available with Homebrew and as a downloadable binary from the [releases page](https://github.com/lnxwizard/gnt/releases).
+
+### With [Homebrew](https://github.com/Homebrew/brew)
+Add Homebrew Tap
+```shell
+brew tap lnxwizard/gnt
+```
+
+Install
+```shell
+brew install lnxwizard/gnt/gnt
+```
+
+Upgrade
+```shell
+brew upgrade lnxwizard/gnt/gnt
+```
+
+### From GitHub
 Open the `Releases` page and click to the latest release and download `gnt_{version}_linux_386.tar.gz`, `gnt_{version}_linux_amd64.tar.gz`, `gnt_{version}_linux_arm.tar.gz` or `gnt_{version}_linux_arm64.tar.gz`depending on your processor architecture. Add `gnt/bin` to the system path, open your favorite Terminal and type:
 ```shell
 gnt --help
 ```
 If you see the help message `gnt` has been successfully installed on your system.
 
-## MacOS
+## macOS
+`gnt` for macOS is available with Homebrew and as a downloadable binary from the [releases page](https://github.com/lnxwizard/gnt/releases).
+
+### With [Homebrew](https://github.com/Homebrew/brew)
+Add Homebrew Tap
+```shell
+brew tap lnxwizard/gnt
+```
+
+Install
+```shell
+brew install lnxwizard/gnt/gnt
+```
+
+Upgrade
+```shell
+brew upgrade lnxwizard/gnt/gnt
+```
+
+### From GitHub
 Open the `Releases` page and click to the latest release and download the `gnt_{version}_darwin_arm64.zip` or `gnt_{version}_darwin_arm64.zip` file according to your processor architecture. Add `gnt/bin` to the system path, open your favorite Terminal and type:
 ```shell
 gnt --help

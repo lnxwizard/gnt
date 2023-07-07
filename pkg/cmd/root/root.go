@@ -5,6 +5,7 @@ import (
 	bugCmd "github.com/lnxwizard/gnt/pkg/cmd/bug"
 	createCmd "github.com/lnxwizard/gnt/pkg/cmd/create"
 	repoCmd "github.com/lnxwizard/gnt/pkg/cmd/repo"
+	structureCmd "github.com/lnxwizard/gnt/pkg/cmd/structure"
 	versionCmd "github.com/lnxwizard/gnt/pkg/cmd/version"
 	"github.com/spf13/cobra"
 )
@@ -28,6 +29,7 @@ func NewCmdRoot() *cobra.Command {
 	cmd.AddCommand(createCmd.NewCmdCreate())
 	cmd.AddCommand(repoCmd.NewCmdRepo())
 	cmd.AddCommand(versionCmd.NewCmdVersion())
+	cmd.AddCommand(structureCmd.NewCmdStructure())
 
 	// return cobra command
 	return cmd

@@ -10,6 +10,7 @@ import (
 var suggestForRepo = []string{"rep", "repository", "source", "reposit", "reposito", "repositor"}
 
 func NewCmdRepo() *cobra.Command {
+	// define `repo` command
 	cmd := &cobra.Command{
 		Use:        "repo",
 		Short:      "Open repository of gnt.",
@@ -19,6 +20,7 @@ func NewCmdRepo() *cobra.Command {
 		Run:        RunCmdRepo,
 	}
 
+	// return cobra command
 	return cmd
 }
 
