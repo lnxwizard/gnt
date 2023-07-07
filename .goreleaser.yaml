@@ -56,3 +56,17 @@ archives:
       - README.md
       - VERSION
       - docs/CHANGELOG.md
+
+brews:
+  -
+    name: gnt
+    homepage: https://github.com/lnxwizard/gnt
+    description: "Easily create your Go projects in the terminal."
+    license: "MIT"
+    tap:
+      owner: lnxwizard
+      name: homebrew-gnt
+    commit_author:
+      name: lnxwizard
+      email: alperakca79@outlook.com
+    commit_msg_template: "Brew formula update for {{ .ProjectName }} version {{ .Tag }}"
