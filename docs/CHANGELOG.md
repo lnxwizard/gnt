@@ -1,3 +1,21 @@
+# v0.9.0-beta
+8761042 Update version
+7900a3e Added new sub-command under bug.
+1d832a1 Used nested functions for sub-commands of bug.
+
+# v0.8.0-beta
+## Changelog
+* 6a32746 #3 Fixed bug
+* 30e6b24 Added new command: `structure`
+* 045394d Update Makefile and README.md
+* 423a3fd Added new package for counting directories and files.
+* bda7ea1 Update .goreleaser.yaml
+* 5dfc2e3 Added start history in README.md
+* e4f92d8 Now `version` command has own folder
+* edaad42 Create dependabot.yaml
+* 3d3a24f Delete dependabot.yaml
+* 2beb6ac Create dependabot.yaml
+
 # v0.7.0-beta
 ## Changelog
 * 47f1fc7 Update version
