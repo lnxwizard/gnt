@@ -11,15 +11,13 @@ func NewCmdBr() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "br",
 		Short: "Create a bug report on GitHub.",
-		Run:   RunCmdBr,
+		Run: func(cmd *cobra.Command, args []string) {
+			// open blank issue
+			err := browser.OpenURL("https://github.com/lnxwizard/gnt/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=")
+			utils.HandleError(err)
+		},
 	}
 
 	// return cobra command
 	return cmd
-}
-
-func RunCmdBr(cmd *cobra.Command, args []string) {
-	// open blank issue
-	err := browser.OpenURL("https://github.com/lnxwizard/gnt/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=")
-	utils.HandleError(err)
 }

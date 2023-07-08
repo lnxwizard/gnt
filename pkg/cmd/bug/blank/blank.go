@@ -11,15 +11,13 @@ func NewCmdBlank() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "blank",
 		Short: "Open a blank issue on GitHub.",
-		Run:   RunCmdBlank,
+		Run: func(cmd *cobra.Command, args []string) {
+			// open blank issue
+			err := browser.OpenURL("https://github.com/lnxwizard/gnt/issues/new")
+			utils.HandleError(err)
+		},
 	}
 
 	// return cobra command
 	return cmd
-}
-
-func RunCmdBlank(cmd *cobra.Command, args []string) {
-	// open blank issue
-	err := browser.OpenURL("https://github.com/lnxwizard/gnt/issues/new")
-	utils.HandleError(err)
 }
