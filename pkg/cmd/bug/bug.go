@@ -6,6 +6,7 @@ import (
 	blankCmd "github.com/lnxwizard/gnt/pkg/cmd/bug/blank"
 	brCmd "github.com/lnxwizard/gnt/pkg/cmd/bug/br"
 	frCmd "github.com/lnxwizard/gnt/pkg/cmd/bug/fr"
+	svCmd "github.com/lnxwizard/gnt/pkg/cmd/bug/sv"
 	"github.com/lnxwizard/gnt/pkg/utils"
 	"github.com/spf13/cobra"
 )
@@ -24,20 +25,19 @@ func NewCmdBug() *cobra.Command {
 		$ gnt bug br
 		$ gnt bug fr`),
 		SuggestFor: suggestForBug,
-		Run:        RunCmdBug,
+		Run: func(cmd *cobra.Command, args []string) {
+			// open bug report url in your default browser
+			err := browser.OpenURL("https://github.com/lnxwizard/gnt/issues/new/choose")
+			utils.HandleError(err)
+		},
 	}
 
 	// define subcommands for bug command
 	cmd.AddCommand(blankCmd.NewCmdBlank())
 	cmd.AddCommand(brCmd.NewCmdBr())
 	cmd.AddCommand(frCmd.NewCmdFr())
+	cmd.AddCommand(svCmd.NewCmdSv())
 
 	// return cobra command
 	return cmd
-}
-
-func RunCmdBug(cmd *cobra.Command, args []string) {
-	// open bug report url in your default browser
-	err := browser.OpenURL("https://github.com/lnxwizard/gnt/issues/new/choose")
-	utils.HandleError(err)
 }
