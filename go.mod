@@ -7,7 +7,7 @@ require (
 	github.com/cli/browser v1.3.0
 	github.com/fatih/color v1.17.0
 	github.com/plouc/textree v1.0.0
-	github.com/spf13/cobra v1.8.0
+	github.com/spf13/cobra v1.8.1
 	go.szostok.io/version v1.2.0
 )
 
